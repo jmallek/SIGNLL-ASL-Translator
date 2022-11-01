@@ -27,8 +27,8 @@ while True:
                 cx, cy = int(lm.x *w), int(lm.y*h)
                 #if id ==0:
                 cv2.circle(img, (cx,cy), 3, (255,0,255), cv2.FILLED)
-
-            mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
+                cv2.putText(img, str(id), (cx-20,cy), cv2.FONT_HERSHEY_PLAIN, 1, (26, 31, 120), 1)
+            mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)               
 
     cTime = time.time()
     fps = 1/(cTime-pTime)
