@@ -8,6 +8,11 @@ def get_sign(hand_data):
             if hand_data[4][1] < hand_data[8][1] and hand_data[4][1] > hand_data[6][1] and hand_data[4][0]<hand_data[8][0]:
                 print('s '+str(time.time()))
             elif hand_data[4][0] > hand_data[6][0]: print('a '+str(time.time()))
+            elif hand_data[4][1] > hand_data[12][1] and hand_data[4][1] > hand_data[16][1] and hand_data[4][0] > hand_data[20][0] and hand_data[4][0] < hand_data[8][0]: print('e '+str(time.time()))
+        # line 12: all fingers pointing straight up
+        elif nonthumbs_aligned(hand_data) and hand_data[20][1] < hand_data[19][1] and hand_data[16][1] < hand_data[15][1] and hand_data[12][1] < hand_data[11][1] and hand_data[8][1] < hand_data[7][1]:
+            if hand_data[4][1] > hand_data[20][1] and hand_data[4][0] < hand_data[8][0] and hand_data[4][0] > hand_data[20][0]:
+                print('b '+str(time.time()))
         # print(str(hand_data[8][0])+" "+str(hand_data[8][1]))
 
 def nonthumbs_aligned(hand_data):
